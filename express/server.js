@@ -14,6 +14,9 @@ router.get('/', (req, res) => {
   res.write('<p>The instructions to build this came from <a href="https://github.com/philanderson888/netlify-express">https://github.com/philanderson888/netlify-express</a></p>');
   res.write('<p>... which was a clone of <a href="https://github.com/neverendingqs/netlify-express">https://github.com/neverendingqs/netlify-express</a></p>');
   res.write('<h1>Hello Hannah you are great xxxxx love dad</h1>');
+  res.write('<script src="https://gist.github.com/philanderson888/3b2c2c988c0425ef9360d145ff32966e.js"></script>');
+
+
   res.end();
 });
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
