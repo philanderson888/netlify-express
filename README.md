@@ -14,6 +14,8 @@ this repo is a clone of the code from Mark Tse at https://github.com/neverending
 
 the documentation is at [notes](notes/notes-from-mark-tse.md)
 
+the article is on Medium at https://www.netlify.com/blog/2018/09/13/how-to-run-express.js-apps-with-netlify-functions/#trying-it-out
+
 
 ## goal of the project
 
