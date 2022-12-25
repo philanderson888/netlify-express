@@ -5,6 +5,7 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 const router = express.Router();
+const fs = require('fs')
 
 router.get('/test3', (req, res) => {
   console.log(`get '/test3' request received ...`)
