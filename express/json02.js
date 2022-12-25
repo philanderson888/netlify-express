@@ -26,9 +26,24 @@ app.use('/',(request,response) => {
     }
 
     console.log(`\n\n=== how to check if a file exists using asynchronous 'access`);
-    fs.access(json01FilePath, fs.F_OK, (err) => {
-        if(err){
+    fs.access(json01FilePath, fs.constants.F_OK, (err) => {
+        if (err) {
             console.error(err);
+
+            // Create the file
+            console.log('\nCreating the file');
+            fs.writeFileSync("example_file2.txt", "Test File");
+        
+            // Test the if the file exists again
+            fs.access('example_file2.txt', fs.constants.F_OK, (err) => {
+                console.log('\n> Checking if the file exists');
+                if (err)
+                    console.error('File does not exist');
+                else {
+                    console.log('File does exist');
+                }
+            });
+
             return;    
         }
         console.log('json01.js exists')
@@ -38,3 +53,6 @@ app.use('/',(request,response) => {
 });
 module.exports = app;
 module.exports.handler = serverless(app);
+
+
+
