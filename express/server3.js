@@ -36,7 +36,7 @@ app.use('/test2', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  console.log(`get '/' request received on /server2 ...`)
+  console.log(`get '/' request received on /server3 ...`)
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.write('<p>This web server is running using Netlify Serverless Functions</p>');
@@ -50,7 +50,8 @@ router.get('/', (req, res) => {
 
 app.use('/', (req, res) => {
   console.log('app.use / request on /server3')
-  res.sendFile(path.join(__dirname, '../server3.html'))
+  console.log(__dirname)
+  res.sendFile(path.join(__dirname, 'server3.html'))
 });
 
 module.exports = app;
