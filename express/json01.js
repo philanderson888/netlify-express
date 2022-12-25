@@ -24,12 +24,14 @@ app.use('/', (req, res) => {
       if (files2 === 'undefined') {
         console.log('no files in parent either')
       }
-  } else {
-    console.log(`files !== undefined`)
+  } else if (files == 'undefined') {
+    console.log(`files == undefined`)
     //console.log(`there are ${files.length} files in the directory`)
     //files.foreach((file)=> {
       //console.log(file);
     //})
+  } else {
+    console.log(`files != undefined`)
   }
   const name = 'phil'
   res.json({name: name});
