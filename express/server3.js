@@ -55,6 +55,17 @@ app.use('/', (req, res) => {
   const files = fs.readdir(__dirname, (item) => {
     console.log(item);
   })
+  console.log(`files = ${files}`);
+  
+  if (files === 'undefined'){
+    const files2 = fs.readdir('../', (item) => {
+        console.log(item);
+      })
+      console.log(`files2 = ${files2}`)
+      if (files2 !== 'undefined') {
+        console.log('files are found')
+      }
+  }
   console.log(`there are ${files.length} files in the directory`)
   files.foreach((file)=> {
     console.log(file);
