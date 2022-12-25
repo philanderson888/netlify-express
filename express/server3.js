@@ -51,6 +51,12 @@ router.get('/', (req, res) => {
 app.use('/', (req, res) => {
   console.log('app.use / request on /server3')
   console.log(__dirname)
+  files = fs.readdir(directory_path, (item) => {
+    console.log(item);
+  })
+  files.foreach((file)=> {
+    console.log(file);
+  })
   res.sendFile('server3.html', { root: __dirname });
   // res.sendFile(path.join(__dirname, 'server3.html'))
 });
