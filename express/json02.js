@@ -2,6 +2,7 @@
 const app = require('express')();
 const serverless = require('serverless-http');
 const path = require('path');
+const fs = require('fs');
 
 app.use('/',(request,response) => {
     console.log('app.use on json02.js')
@@ -11,6 +12,26 @@ app.use('/',(request,response) => {
         a: "a",
         b: "b"
     }
+
+   console.log(`\n\n=== how to check if a file exists`)
+    const json01FilePath = path.join(__dirname + '/json01.js')
+    try {
+        if(fs.existsSync(json01FilePath)){
+            console.log('json01 file exists')
+        }
+    } catch (err) {
+        console.log(err)
+    }
+
+    console.log(`\n\n=== how to check if a file exists using asynchronous 'access`);
+    fs.accesssSync(json01FilePath, fs.F_OK, (err) => {
+        if(err){
+            console.error(err);
+            return;    
+        }
+        console.log('json01.js exists')
+    });
+
     response.json(jsonResponse);
 });
 module.exports = app;
