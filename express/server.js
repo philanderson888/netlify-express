@@ -34,7 +34,11 @@ app.use('/', (req, res) => {
   console.log('app.use / request received - sending fixed file')
   res.sendFile(path.join(__dirname, '../index.html'))
 });
-app.use('/test2', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+
+app.use('/test2', (req, res) => {
+  console.log('request for /test2 received')
+  res.sendFile(path.join(__dirname, '../index.html'))
+});
 
 module.exports = app;
 module.exports.handler = serverless(app);
