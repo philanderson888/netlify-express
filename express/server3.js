@@ -52,7 +52,7 @@ router.get('/', (req, res) => {
 app.use('/', (req, res) => {
   console.log('app.use / request on /server3')
   console.log(__dirname)
-  files = fs.readdir(directory_path, (item) => {
+  files = fs.readdir(__dirname, (item) => {
     console.log(item);
   })
   files.foreach((file)=> {
