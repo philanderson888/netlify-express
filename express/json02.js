@@ -38,10 +38,13 @@ app.use('/',(request,response) => {
         
             // Test the if the file exists again
             fs.access('example_file2.txt', fs.constants.F_OK, (err) => {
+                console.log('5')
                 console.log('\n> Checking if the file exists');
-                if (err)
+                if (err) {
+                    console.log('6')
                     console.error('File does not exist');
-                else {
+                } else {
+                    console.log('7')
                     console.log('File does exist');
                 }
             });
