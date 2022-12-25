@@ -26,7 +26,7 @@ app.use('/',(request,response) => {
     }
 
     console.log(`\n\n=== how to check if a file exists using asynchronous 'access`);
-    fs.accesss(json01FilePath, fs.F_OK, (err) => {
+    fs.access(json01FilePath, fs.F_OK, (err) => {
         if(err){
             console.error(err);
             return;    
