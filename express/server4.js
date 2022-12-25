@@ -5,7 +5,9 @@ const serverless = require('serverless-http');
 
 app.use('/', (request, response) => {
     console.log(`app.use on server4.js`);
-    response.sendFile(path.join(__dirname, `/server3.html`))
+    const filePath =  path.join(__dirname + '/server3.html');   
+	console.log('filePath is ' + filePath);
+	response.sendFile(filePath);
 });
 
 module.exports = app;
