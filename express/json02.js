@@ -27,7 +27,9 @@ app.use('/',(request,response) => {
 
     console.log(`\n\n=== how to check if a file exists using asynchronous 'access`);
     fs.access(json01FilePath, fs.constants.F_OK, (err) => {
+        console.log('1')
         if (err) {
+            console.log('2')
             console.error(err);
 
             // Create the file
@@ -46,8 +48,10 @@ app.use('/',(request,response) => {
 
             return;    
         }
+        console.log('3')
         console.log('json01.js exists')
     });
+    console.log('4')
 
     response.json(jsonResponse);
 });
