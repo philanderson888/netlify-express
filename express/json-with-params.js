@@ -1,8 +1,6 @@
 'use strict';
 const app = require('express')();
-const { json } = require('body-parser');
 const serverless = require('serverless-http');
-const { response } = require('./json02');
 
 app.use('/', (req,res) => {
     console.log('app.use on json-with-params.js')

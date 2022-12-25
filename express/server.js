@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/test3', (req, res) => {
   console.log(`get '/test3' request received ...`)
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
+  res.write('<h1>Hello from Express.js!!!</h1>');
   res.write('<p>This web server is running using Netlify Serverless Functions</p>');
   res.write('<p>The live URL is <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
   res.write('<p>The instructions to build this came from <a href="https://github.com/philanderson888/netlify-express">https://github.com/philanderson888/netlify-express</a></p>');
@@ -51,7 +51,7 @@ router.get('/', (req, res) => {
 app.use('/', (req, res) => {
   console.log('app.use / request received on path /server2')
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
+  res.write('<h1>Hello from Express.js!!</h1>');
   res.write('<p>This web server is running using Netlify Serverless Functions</p>');
   res.write('<p>The live URL is <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
   res.write('<p>The instructions to build this came from <a href="https://github.com/philanderson888/netlify-express">https://github.com/philanderson888/netlify-express</a></p>');
