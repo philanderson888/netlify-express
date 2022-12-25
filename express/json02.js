@@ -26,39 +26,45 @@ app.use('/',(request,response) => {
     }
 
     console.log(`\n\n=== how to check if a file exists using asynchronous 'access`);
-    fs.access(json01FilePath, fs.constants.F_OK, (err) => {
-        console.log('1')
-        if (err) {
-            console.log('2')
-            console.error(err);
 
-            // Create the file
-            console.log('\nCreating the file');
-            fs.writeFileSync("example_file2.txt", "Test File");
-        
-            // Test the if the file exists again
-            try {
-                fs.access('example_file2.txt', fs.constants.F_OK, (err) => {
-                    console.log('5')
-                    console.log('\n> Checking if the file exists');
-                    if (err) {
-                        console.log('6')
-                        console.error('File does not exist');
-                    } else {
-                        console.log('7')
-                        console.log('File does exist');
-                    }
-                });    
-            } catch(err) {
-                console.log('8');
-                console.log(err);
+    try {
+        fs.access(json01FilePath, fs.constants.F_OK, (err) => {
+            console.log('1')
+            if (err) {
+                console.log('2')
+                console.error(err);
+    
+                // Create the file
+                console.log('\nCreating the file');
+                fs.writeFileSync("example_file2.txt", "Test File");
+            
+                // Test the if the file exists again
+                try {
+                    fs.access('example_file2.txt', fs.constants.F_OK, (err) => {
+                        console.log('5')
+                        console.log('\n> Checking if the file exists');
+                        if (err) {
+                            console.log('6')
+                            console.error('File does not exist');
+                        } else {
+                            console.log('7')
+                            console.log('File does exist');
+                        }
+                    });    
+                } catch(err) {
+                    console.log('8');
+                    console.log(err);
+                }
+    
+                return;    
             }
+            console.log('3')
+            console.log('json01.js exists')
+        });    
+    } catch(err) {
+        
+    }
 
-            return;    
-        }
-        console.log('3')
-        console.log('json01.js exists')
-    });
     console.log('4')
 
     response.json(jsonResponse);
