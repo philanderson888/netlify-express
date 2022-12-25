@@ -1,6 +1,7 @@
 'use strict';
 const app = require('express')();
 const serverless = require('serverless-http');
+const path = require('path');
 
 app.use('/',(request,response) => {
     console.log('app.use on json02.js')
