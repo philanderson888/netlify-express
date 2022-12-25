@@ -16,15 +16,17 @@ app.use('/',(request,response) => {
    console.log(`\n\n=== how to check if a file exists`)
     const json01FilePath = path.join(__dirname + '/json01.js')
     try {
-        if(fs.existsSync(json01FilePath)){
+        if (fs.existsSync(json01FilePath)){
             console.log('json01 file exists')
+        } else {
+            console.log('json01.js file does not exist')
         }
     } catch (err) {
         console.log(err)
     }
 
     console.log(`\n\n=== how to check if a file exists using asynchronous 'access`);
-    fs.accesssSync(json01FilePath, fs.F_OK, (err) => {
+    fs.accesss(json01FilePath, fs.F_OK, (err) => {
         if(err){
             console.error(err);
             return;    
