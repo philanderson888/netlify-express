@@ -1,5 +1,6 @@
 'use strict';
 const app = require('express')();
+const serverless = require('serverless-http');
 
 app.use('/',(request,response) => {
     console.log('app.use on json02.js')
@@ -11,3 +12,5 @@ app.use('/',(request,response) => {
     }
     response.json(jsonResponse);
 });
+module.exports = app;
+module.exports.handler = serverless(app);
