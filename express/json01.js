@@ -15,7 +15,7 @@ app.use('/', (req, res) => {
   })
   console.log(`files = ${files}`);
   
-  if (files === 'undefined'){
+  if (files === undefined){
     console.log(`files === undefined`)
     const files2 = fs.readdir('../', (item) => {
         console.log(item);
