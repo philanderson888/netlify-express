@@ -49,17 +49,8 @@ router.get('/', (req, res) => {
 });
 
 app.use('/', (req, res) => {
-  console.log('app.use / request received on /server2')
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.write('<p>This web server is running using Netlify Serverless Functions</p>');
-  res.write('<p>The live URL is <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
-  res.write('<p>The instructions to build this came from <a href="https://github.com/philanderson888/netlify-express">https://github.com/philanderson888/netlify-express</a></p>');
-  res.write('<p>... which was a clone of <a href="https://github.com/neverendingqs/netlify-express">https://github.com/neverendingqs/netlify-express</a></p>');
-  res.write('<p>... code to build this server is below ...</p>');
-  res.write('<script src="https://gist.github.com/philanderson888/3b2c2c988c0425ef9360d145ff32966e.js"></script>');
-  res.end();
-//  res.sendFile(path.join(__dirname, '../index.html'))
+  console.log('app.use / request on /server3')
+  res.sendFile(path.join(__dirname, '../server3.html'))
 });
 
 module.exports = app;
