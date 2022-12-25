@@ -21,7 +21,7 @@ app.use('/', (req, res) => {
         console.log(item);
       })
       console.log(`files2 = ${files2}`)
-      if (files2 === 'undefined') {
+      if (files2 === undefined) {
         console.log('no files in parent either')
       }
   } else if (files == 'undefined') {
