@@ -36,7 +36,7 @@ app.use('/test2', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  console.log(`get '/' request received ...`)
+  console.log(`get '/' request received ... on /server .. `)
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.write('<p>This web server is running using Netlify Serverless Functions</p>');
