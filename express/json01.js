@@ -16,6 +16,7 @@ app.use('/', (req, res) => {
   console.log(`files = ${files}`);
   
   if (files === 'undefined'){
+    console.log(`files === undefined`)
     const files2 = fs.readdir('../', (item) => {
         console.log(item);
       })
@@ -24,10 +25,11 @@ app.use('/', (req, res) => {
         console.log('no files in parent either')
       }
   } else {
-    console.log(`there are ${files.length} files in the directory`)
-    files.foreach((file)=> {
-      console.log(file);
-    })
+    console.log(`files !== undefined`)
+    //console.log(`there are ${files.length} files in the directory`)
+    //files.foreach((file)=> {
+      //console.log(file);
+    //})
   }
   const name = 'phil'
   res.json({name: name});
