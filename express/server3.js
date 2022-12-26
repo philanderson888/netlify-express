@@ -56,24 +56,27 @@ app.use('/', (req, res) => {
     console.log(item);
   })
   console.log(`files = ${files}`);
-  
-  if (files === 'undefined'){
-    const files2 = fs.readdir('../', (item) => {
-        console.log(item);
-      })
-      console.log(`files2 = ${files2}`)
-      if (files2 !== 'undefined') {
-        console.log('files are found')
-      }
+  if (files === undefined){
+    console.log('not reading any files so cannot serve any files')
+  } else {
+    console.log('files are found')
+    console.log(`there are ${files.length} files in the directory`)
+    console.log('serving file as response')
+    files.foreach((file)=> {
+      console.log(file);
+    })
+    res.sendFile('server3.html', { root: __dirname });
+    res.sendFile(path.join(__dirname, 'server3.html'))
   }
-  console.log(`there are ${files.length} files in the directory`)
-  files.foreach((file)=> {
-    console.log(file);
-  })
-  res.sendFile('server3.html', { root: __dirname });
-  // res.sendFile(path.join(__dirname, 'server3.html'))
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write(`<h1>app.use('/') sending file but cannot find file ... </h1>`);   
+  res.write(`<p>no file found ... </p>`);
+
+  res.write('<p>home .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
+
+  res.write('<p>source .. <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server3.js">https://github.com/philanderson888/netlify-express/blob/master/express/server3.js</a></p>');
+
+  res.end();
 });
-
 module.exports = app;
-
 module.exports.handler = serverless(app);
