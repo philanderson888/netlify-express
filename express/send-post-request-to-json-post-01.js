@@ -5,9 +5,9 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 const router = express.Router();
-const http = require('http');
-const fetch = require('node-fetch');
-const encoding = require('encoding')
+//const http = require('http');
+//const fetch = require('node-fetch');
+//const encoding = require('encoding')
 app.use(bodyParser.json());
 app.use('/.netlify/functions/send-post-request-to-json-post-01', router); 
 console.log('something received')
@@ -25,6 +25,7 @@ router.get('/', (req, res) => {
       name: 'phil'
     }
   
+    /*
     fetch(url, {
         method: 'POST',
         headers: headers,
@@ -32,6 +33,8 @@ router.get('/', (req, res) => {
     })
     .then(response => response.json())
     .then(responseJson => console.log(responseJson));
+
+    */
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
   
