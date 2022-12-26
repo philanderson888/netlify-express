@@ -1,4 +1,4 @@
-a'use strict';
+'use strict';
 const app = require('express')();
 const router = express.Router();
 const serverless = require('serverless-http');
