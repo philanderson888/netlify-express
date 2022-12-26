@@ -22,6 +22,13 @@ router.get('/', (req,res) => {
     res.write(`<p>source .. <a href="https://github.com/philanderson888/netlify-express/blob/master/express/send-post-request-to-json-post-01.js">https://github.com/philanderson888/netlify-express/blob/master/express/send-post-request-to-json-post-01.js</a></p>`);
   
     res.write(`<p>The goal of this is to use nodejs to send a json POST fetch request to the given endpoind ... let's see if we can make it work ...`)
+
+    res.end();
+});
+module.exports = app;
+module.exports.handler = serverless(app);
+
+    /*
   
     const url = `https://github.com/philanderson888/netlify-express/blob/master/express/send-post-request-to-json-post-01.js`;
 
@@ -33,7 +40,6 @@ router.get('/', (req,res) => {
       name: 'phil'
     }
   
-    /*
     fetch(url, {
         method: 'POST',
         headers: headers,
@@ -43,8 +49,3 @@ router.get('/', (req,res) => {
         .then(responseJson => console.log(responseJson));
         
     */
-
-    res.end();
-});
-module.exports = app;
-module.exports.handler = serverless(app);
