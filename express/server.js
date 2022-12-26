@@ -42,9 +42,9 @@ router.get('/', (req, res) => {
   res.write('<p>The instructions to build this came from <a href="https://github.com/philanderson888/netlify-express">https://github.com/philanderson888/netlify-express</a></p>');
   res.write('<p>... which was a clone of <a href="https://github.com/neverendingqs/netlify-express">https://github.com/neverendingqs/netlify-express</a></p>');
 
-  res.write('.. source ... https://github.com/philanderson888/netlify-express/blob/master/express/server.js');
+  res.write('.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server.js</a>');
   
-  res.write('.. home .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server>https://netlify-express-serverless.netlify.app/.netlify/functions/server</a>');
+  res.write('.. home .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a>');
 
   res.write('<p>... code to build this server is below ...</p>');
   res.write('<script src="https://gist.github.com/philanderson888/3b2c2c988c0425ef9360d145ff32966e.js"></script>');
