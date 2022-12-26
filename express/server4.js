@@ -30,7 +30,7 @@ app.use('/', (req, res) => {
   
     res.write('<p>home .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
   
-    res.write('<p>source .. <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server3.js">https://github.com/philanderson888/netlify-express/blob/master/express/server3.js</a></p>');
+    res.write('<p>source .. <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server4.js">https://github.com/philanderson888/netlify-express/blob/master/express/server4.js</a></p>');
   
     res.end();
 
