@@ -6,17 +6,11 @@ const serverless = require('serverless-http');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router); 
-
-console.log(1);
-module.exports = app;
-console.log(2);
-module.exports.handler = serverless(app);
-console.log(3);
+app.use('/.netlify/functions/json-post-01', router); 
 
 router.get('/', (req, res) => {
 
-    console.log(`router.get('/') on json-post-01 .. `)
+  console.log(`router.get('/') on json-post-01 .. `)
 
   res.writeHead(200, { 'Content-Type': 'text/html' });
 
@@ -29,6 +23,8 @@ router.get('/', (req, res) => {
   res.end();
 });
 
+console.log(1);
 module.exports = app;
-
+console.log(2);
 module.exports.handler = serverless(app);
+console.log(3);
