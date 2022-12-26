@@ -4,6 +4,7 @@ const app = express();
 const router = express.Router();
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
+const path = require('path');
 app.use(bodyParser.json());
 app.use('./netlify/functions/send-post-request-to-json-post-01', router);
 
@@ -32,6 +33,7 @@ router.get('/', (req,res) => {
       name: 'phil'
     }
   
+    /*
     fetch(url, {
         method: 'POST',
         headers: headers,
@@ -39,7 +41,9 @@ router.get('/', (req,res) => {
     })
         .then(response => response.json())
         .then(responseJson => console.log(responseJson));
-  
+        
+    */
+
     res.end();
 });
 module.exports = app;
