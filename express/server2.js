@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const serverless = require('serverless-http');
+app.use('/.netlify/functions/server', router);  // path must route to lambda
 
 router.get('/', (req, res) => {
   console.log(`get '/' request received on /server2 ...`)
@@ -43,7 +44,7 @@ router.post('/', (req, res) => res.json({ postBody: req.body }));
 
 app.use(bodyParser.json());
 
-app.use('/.netlify/functions/server', router);  // path must route to lambda
+
 
 app.use('/test2', (req, res) => {
   console.log('request for /test2 received')
