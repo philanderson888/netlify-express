@@ -15,17 +15,17 @@ router.get('/', (req, res) => {
 
 //    const url = `https://github.com/philanderson888/netlify-express/blob/master/express/json-post-01.js`;
 
+    // send a demo post request
+    const url = `https://jsonplaceholder.typicode.com/users`;
+    
     const headers = {
       'Content-Type': 'application/json'
     }
   
-    const postData = {
+    const user = {
       name: 'phil'
     }
 
-    // send a demo post request
-    const url = `https://jsonplaceholder.typicode.com/users`;
-    const user = {name: name};  
     axios.post(url, user)
         .then(response => {
         //console.log(response);
@@ -33,7 +33,6 @@ router.get('/', (req, res) => {
         console.log(response.data)
     });
   
-
     res.writeHead(200, { 'Content-Type': 'text/html' });
   
     res.write(`<h1>router.get('/') on json-send-post-request-to-json-post-01 ..</h1>`);
