@@ -9,6 +9,25 @@ const axios = require('axios');
 app.use(bodyParser.json());
 app.use('/.netlify/functions/send-post-request-to-json-post-01', router); 
 
+const url = `https://jsonplaceholder.typicode.com/users`;
+    
+const headers = {
+  'Content-Type': 'application/json'
+}
+
+const user = {
+  name: 'phil'
+}
+
+console.log('11');
+
+axios.post(url, user)
+.then(response => {
+  console.log(`data successfully POSTed to ${url} and received this response`)
+  console.log(response.data)
+});
+
+
 router.get('/', (req, res) => {
     console.log(`router.get('/') on json-send-post-request-to-json-post-01 .. `)
 
