@@ -4,7 +4,7 @@ const app = express();
 const serverless = require('serverless-http');
 const fs = require('fs');
 
-app.use('/', (request, response) => {
+app.use('/', (req, res) => {
     console.log(`app.use on server4.js`);
 
     const files = fs.readdir(__dirname, (item) => {
@@ -21,7 +21,7 @@ app.use('/', (request, response) => {
         console.log('serving file as response')   
         const filePath =  path.join(__dirname + '/server3.html');   
         console.log('filePath is ' + filePath);
-        response.sendFile(filePath);
+        res.sendFile(filePath);
     }
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
