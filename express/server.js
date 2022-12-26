@@ -6,28 +6,15 @@ const app = express();
 const bodyParser = require('body-parser');
 const router = express.Router();
 
-router.get('/another', (req, res) => {
-  console.log(`get() request received on /another path`)
-  res.json({ route: req.originalUrl });
-});
-
-router.post('/', (req, res) => res.json({ postBody: req.body }));
-
 app.use(bodyParser.json());
 
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
-app.use('/test2', (req, res) => {
-  console.log('request for /test2 received')
-  res.sendFile(path.join(__dirname, '../index.html'))
-});
-
 router.get('/', (req, res) => {
-  console.log(`get '/' request received ... on /server .. `)
+  console.log(`router.get('/') on /server .. `)
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>server.js</h1>');
-  res.write('<p>This web server is running using Netlify Serverless Functions</p>');
-  
+  res.write(`<h1>router.get('/') Netlify serverless functions => server.js</h1>`);
+    
   res.write('<p>.. home .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
   
   res.write('<p>.. server .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
@@ -48,13 +35,29 @@ router.get('/', (req, res) => {
 
   res.write('<p>acknowledge <a target="_self" href="https://github.com/neverendingqs/netlify-express">https://github.com/neverendingqs/netlify-express</a></p>');
 
-  res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server.js</a></p>');
-  
-  res.write('<p>.. home .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
-
-  res.write('<p>... source gist .. </p>');
+  res.write('<p>... source .. </p>');
   res.write('<script src="https://gist.github.com/philanderson888/3b2c2c988c0425ef9360d145ff32966e.js"></script>');
   res.end();
+});
+
+module.exports = app;
+
+module.exports.handler = serverless(app);
+
+/*
+
+delete
+
+router.get('/another', (req, res) => {
+  console.log(`get() request received on /another path`)
+  res.json({ route: req.originalUrl });
+});
+
+router.post('/', (req, res) => res.json({ postBody: req.body }));
+
+app.use('/test2', (req, res) => {
+  console.log('request for /test2 received')
+  res.sendFile(path.join(__dirname, '../index.html'))
 });
 
 app.use('/', (req, res) => {
@@ -71,6 +74,6 @@ app.use('/', (req, res) => {
 //  res.sendFile(path.join(__dirname, '../index.html'))
 });
 
-module.exports = app;
+delete
 
-module.exports.handler = serverless(app);
+*/
