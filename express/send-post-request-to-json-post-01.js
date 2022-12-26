@@ -8,14 +8,10 @@ const router = express.Router();
 const axios = require('axios');
 app.use(bodyParser.json());
 app.use('/.netlify/functions/send-post-request-to-json-post-01', router); 
-console.log('something received')
 
 router.get('/', (req, res) => {
     console.log(`router.get('/') on json-send-post-request-to-json-post-01 .. `)
 
-//    const url = `https://github.com/philanderson888/netlify-express/blob/master/express/json-post-01.js`;
-
-    // send a demo post request
     const url = `https://jsonplaceholder.typicode.com/users`;
     
     const headers = {
@@ -26,9 +22,10 @@ router.get('/', (req, res) => {
       name: 'phil'
     }
 
+    console.log('1');
+
     axios.post(url, user)
         .then(response => {
-        //console.log(response);
         console.log(`data successfully POSTed to ${url} and received this response`)
         console.log(response.data)
     });
@@ -48,6 +45,10 @@ router.get('/', (req, res) => {
 module.exports = app;
 module.exports.handler = serverless(app);
 
+
+
+
+// const url = `https://github.com/philanderson888/netlify-express/blob/master/express/json-post-01.js`;
 
 //const http = require('http');
 //const fetch = require('node-fetch');
