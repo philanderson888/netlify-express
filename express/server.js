@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     
   res.write(`<p>home .. router.get('/') <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>`);
   
-  res.write(`<p>server router.get('/') .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>`);
+  res.write(`<p>server .. router.get('/') .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>`);
 
   res.write(`<p>server2 .. app.use('/') .. <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server2" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/server2</a></p>`);
 
