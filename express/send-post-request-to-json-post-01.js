@@ -26,7 +26,7 @@ axios.post(url, user)
   console.log(`data successfully POSTed to ${url} and received this response`)
   data = response.json()
   console.log(data)
-  console.log(json(data)
+  console.log(json(data))
 });
 
 
