@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
   
   res.write(`<p>json send params <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989</a></p>`);
 
-  res.write(`<p>send-request-to-json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/send-request-to-json-post-01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/send-request-to-json-post-01</a></p>`);
+  res.write(`<p>send-post-request-to-json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/send-post-request-to-json-post-01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/send-post-request-to-json-post-01</a></p>`);
   
   res.write(`<p>json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01</a></p>`);
 
