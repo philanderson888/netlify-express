@@ -8,6 +8,7 @@ const router = express.Router();
 app.use(bodyParser.json());
 app.use('/.netlify/functions/send-post-request-to-json-post-01', router); 
 console.log('something received')
+const http = require('http');
 const fetch = require('node-fetch');
 router.get('/', (req, res) => {
     console.log(`router.get('/') on json-send-post-request-to-json-post-01 .. `)
