@@ -6,7 +6,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const router = express.Router();
 app.use(bodyParser.json());
-app.use('/.netlify/functions/send-post-request-to-json-post-02', router);  // path must route to lambda
+app.use('/.netlify/functions/send-post-request-to-json-post-02', router); 
+console.log('something received');
 router.get('/', (req, res) => {
   console.log(`router.get('/') on /send-post-request-to-json-post-02 .. `)
   res.writeHead(200, { 'Content-Type': 'text/html' });

@@ -1,16 +1,14 @@
 'use strict';
 const express = require('express');
-const app = express();
-const router = express.Router();
-const serverless = require('serverless-http');
-const bodyParser = require('body-parser');
 const path = require('path');
+const serverless = require('serverless-http');
+const app = express();
+const bodyParser = require('body-parser');
+const router = express.Router();
 app.use(bodyParser.json());
-app.use('./netlify/functions/send-post-request-to-json-post-01', router);
-
-console.log(`something received`);
-
-router.get('/', (req,res) => {
+app.use('/.netlify/functions/send-post-request-to-json-post-01', router); 
+console.log('something received')
+router.get('/', (req, res) => {
     console.log(`router.get('/') on json-send-post-request-to-json-post-01 .. `)
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
