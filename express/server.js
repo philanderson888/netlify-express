@@ -33,6 +33,8 @@ router.get('/', (req, res) => {
 
   res.write(`<p>send-post-request-to-json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/send-post-request-to-json-post-01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/send-post-request-to-json-post-01</a></p>`);
   
+  res.write(`<p>send-post-request-to-json-post-02 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/send-post-request-to-json-post-02" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/send-post-request-to-json-post-02</a></p>`);
+
   res.write(`<p>json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01</a></p>`);
 
   res.write(`<p>source .. <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server.js">https://github.com/philanderson888/netlify-express/blob/master/express/server.js</a></p>`);
