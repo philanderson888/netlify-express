@@ -38,3 +38,5 @@ router.get('/', (req,res) => {
   
     res.end();
 });
+module.exports = app;
+module.exports.handler = serverless(app);
