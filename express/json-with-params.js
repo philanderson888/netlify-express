@@ -6,9 +6,11 @@ app.use('/', (req,res) => {
     console.log('app.use on json-with-params.js')
     console.log(`request query = ${req.query}`)
     if (req.query != undefined) {
-        const name = req.query.name
+        const name = req.query.name;
+        const dob = req.query.dob;
         const jsonResponse = {
-            name: name
+            name: name,
+            dob: dob,
         }
         res.json(jsonResponse)
     }

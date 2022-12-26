@@ -27,13 +27,15 @@ router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.write('<p>This web server is running using Netlify Serverless Functions</p>');
-  res.write('<p>The live URL is <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
-  res.write('<p>Server2 .. at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server2" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server2</a></p>');
-  res.write('<p>Server3 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server3" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server3</a></p>');
-  res.write('<p>Server4 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server4" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server4</a></p>');
-  res.write('<p>Json01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json01" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json01</a></p>');
-  res.write('<p>Json02 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json02" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json02</a></p>');
+  res.write('<p>server at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
+  res.write('<p>server2 .. at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server2" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server2</a></p>');
+  res.write('<p>server3 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server3" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server3</a></p>');
+  res.write('<p>server4 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server4" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server4</a></p>');
+  res.write('<p>json01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json01" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json01</a></p>');
+  res.write('<p>json02 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json02" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json02</a></p>');
+  res.write('<p>json-with-params at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989</a></p>');
   
+  res.write('<p>json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01</a></p>');
   res.write('<p>The instructions to build this came from <a href="https://github.com/philanderson888/netlify-express">https://github.com/philanderson888/netlify-express</a></p>');
   res.write('<p>... which was a clone of <a href="https://github.com/neverendingqs/netlify-express">https://github.com/neverendingqs/netlify-express</a></p>');
   res.write('<p>... code to build this server is below ...</p>');
