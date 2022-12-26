@@ -21,24 +21,24 @@ router.get('/', (req, res) => {
 
   res.write(`<p>server2 .. app.use('/') .. <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server2" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/server2</a></p>`);
 
-  res.write('<p>server3 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server3" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server3</a></p>');
-  
-  res.write('<p>server4 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server4" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server4</a></p>');
-  
-  res.write('<p>json01 .. return json ..<a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json01</a></p>');
-  
-  res.write('<p>json02 .. return json <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json02" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json02</a></p>');
-  
-  res.write('<p>json send params <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989</a></p>');
-  
-  res.write('<p>json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01</a></p>');
+  res.write(`<p>server3 .. app.use('/') at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server3" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server3</a></p>`);
 
-  res.write('<p>source .. <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server.js">https://github.com/philanderson888/netlify-express/blob/master/express/server.js</a></p>');
+  res.write(`<p>server4 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server4" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server4</a></p>`);
+  
+  res.write(`<p>json01 .. return json ..<a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json01</a></p>`);
+  
+  res.write(`<p>json02 .. return json <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json02" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json02</a></p>`);
+  
+  res.write(`<p>json send params <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989</a></p>`);
+  
+  res.write(`<p>json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01</a></p>`);
 
-  res.write('<p>acknowledge <a target="_self" href="https://github.com/neverendingqs/netlify-express">https://github.com/neverendingqs/netlify-express</a></p>');
+  res.write(`<p>source .. <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server.js">https://github.com/philanderson888/netlify-express/blob/master/express/server.js</a></p>`);
 
-  res.write('<p>... source .. </p>');
-  res.write('<script src="https://gist.github.com/philanderson888/3b2c2c988c0425ef9360d145ff32966e.js"></script>');
+  res.write(`<p>acknowledge <a target="_self" href="https://github.com/neverendingqs/netlify-express">https://github.com/neverendingqs/netlify-express</a></p>`);
+
+  res.write(`<p>... source .. </p>`);
+  res.write(`<script src="https://gist.github.com/philanderson888/3b2c2c988c0425ef9360d145ff32966e.js"></script>`);
   res.end();
 });
 
