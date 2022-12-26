@@ -5,20 +5,21 @@ const router = express.Router();
 const serverless = require('serverless-http');
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
-
 const path = require('path');
 const bodyParser = require('body-parser');
 
-
 app.use(bodyParser.json());
-
 
 app.use('/', (req, res) => {
   console.log(`app.use('/') request received on /server2 ...`)
   res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write(`<h1>Server2.js via app.use("/")</h1>`);
-  res.write('.. source ... https://github.com/philanderson888/netlify-express/blob/master/express/server2.js');
-  res.write('.. back .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server>https://netlify-express-serverless.netlify.app/.netlify/functions/server</a>');
+  
+  res.write(`<h1>app.use('/') on server2.js</h1>`);
+  
+  res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
+
+  res.write('<p>.. back .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server>https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
+  
   res.end();
 });
 
