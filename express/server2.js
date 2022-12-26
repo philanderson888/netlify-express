@@ -5,19 +5,7 @@ const router = express.Router();
 const serverless = require('serverless-http');
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 
-router.get('/', (req, res) => {
-  console.log(`get '/' request received on /server2 ...`)
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Server2.js via router.get("/")</h1>');
-  res.write('.. source ... https://github.com/philanderson888/netlify-express/blob/master/express/server2.js');
-  res.write('.. back .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server>https://netlify-express-serverless.netlify.app/.netlify/functions/server</a>');
-  res.end();
-});
 
-
-/* 
-
-delete 
 
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -65,9 +53,14 @@ app.use('/', (req, res) => {
 //  res.sendFile(path.join(__dirname, '../index.html'))
 });
 
-delete
-
-*/
+router.get('/', (req, res) => {
+  console.log(`get '/' request received on /server2 ...`)
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Server2.js via router.get("/")</h1>');
+  res.write('.. source ... https://github.com/philanderson888/netlify-express/blob/master/express/server2.js');
+  res.write('.. back .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server>https://netlify-express-serverless.netlify.app/.netlify/functions/server</a>');
+  res.end();
+});
 
 module.exports = app;
 
