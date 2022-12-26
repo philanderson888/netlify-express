@@ -2,14 +2,17 @@
 const express = require('express');
 const app = express();
 const serverless = require('serverless-http');
+const fs = require('fs')''
 
 app.use('/', (request, response) => {
     console.log(`app.use on server4.js`);
 
     const files = fs.readdir(__dirname, (item) => {
         console.log(item);
-      })
+    });
+
     console.log(`files = ${files}`);
+
     if (files === undefined){
         console.log('not reading any files so cannot serve any files')
     } else {
