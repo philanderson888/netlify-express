@@ -18,7 +18,15 @@ app.use('/', (req, res) => {
   
   res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
 
+  res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
+
+  res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
+
+  res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
+
   res.write('<p>.. back .. <a target="_self" href="https://netlify-express-serverless.netlify.app/.netlify/functions/server>https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
+
+  res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
   
   res.end();
 });
