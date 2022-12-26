@@ -24,7 +24,9 @@ console.log('11');
 axios.post(url, user)
 .then(response => {
   console.log(`data successfully POSTed to ${url} and received this response`)
-  console.log(response.data)
+  data = response.json()
+  console.log(data)
+  console.log(json(data)
 });
 
 
