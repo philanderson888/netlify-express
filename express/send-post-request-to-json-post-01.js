@@ -5,7 +5,7 @@ const router = express.Router();
 const serverless = require('serverless-http');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use('./netlify/functions/send-post-request-to-json-post-01.js', router);
+app.use('./netlify/functions/send-post-request-to-json-post-01', router);
 
 router.get('/', (req,res) => {
     console.log(`router.get('/') on json-send-post-request-to-json-post-01 .. `)
