@@ -24,11 +24,15 @@ router.get('/', (req, res) => {
 
     console.log('1');
 
+    /*
+
     axios.post(url, user)
         .then(response => {
         console.log(`data successfully POSTed to ${url} and received this response`)
         console.log(response.data)
     });
+
+    */
   
     res.writeHead(200, { 'Content-Type': 'text/html' });
   
