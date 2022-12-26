@@ -5,9 +5,7 @@ const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
 const router = express.Router();
-//const http = require('http');
-//const fetch = require('node-fetch');
-//const encoding = require('encoding')
+const axios = require('axios');
 app.use(bodyParser.json());
 app.use('/.netlify/functions/send-post-request-to-json-post-01', router); 
 console.log('something received')
@@ -15,7 +13,7 @@ console.log('something received')
 router.get('/', (req, res) => {
     console.log(`router.get('/') on json-send-post-request-to-json-post-01 .. `)
 
-    const url = `https://github.com/philanderson888/netlify-express/blob/master/express/send-post-request-to-json-post-01.js`;
+//    const url = `https://github.com/philanderson888/netlify-express/blob/master/express/json-post-01.js`;
 
     const headers = {
       'Content-Type': 'application/json'
@@ -24,17 +22,17 @@ router.get('/', (req, res) => {
     const postData = {
       name: 'phil'
     }
-  
-    /*
-    fetch(url, {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify(postData)
-    })
-    .then(response => response.json())
-    .then(responseJson => console.log(responseJson));
 
-    */
+    // send a demo post request
+    const url = `https://jsonplaceholder.typicode.com/users`;
+    const user = {name: name};  
+    axios.post(url, user)
+        .then(response => {
+        //console.log(response);
+        console.log(`data successfully POSTed to ${url} and received this response`)
+        console.log(response.data)
+    });
+  
 
     res.writeHead(200, { 'Content-Type': 'text/html' });
   
@@ -50,3 +48,19 @@ router.get('/', (req, res) => {
 });
 module.exports = app;
 module.exports.handler = serverless(app);
+
+
+//const http = require('http');
+//const fetch = require('node-fetch');
+//const encoding = require('encoding')
+
+/*
+fetch(url, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(postData)
+})
+.then(response => response.json())
+.then(responseJson => console.log(responseJson));
+
+*/
