@@ -16,17 +16,11 @@ app.use('/', (req, res) => {
   
   res.write(`<h1>app.use('/') on server2.js</h1>`);
   
-  res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
-
   res.write('<p>.. home ... <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
-
+  
   res.write('<p>.. source ... <a href="https://github.com/philanderson888/netlify-express/blob/master/express/server2.js" target="_self">https://github.com/philanderson888/netlify-express/blob/master/express/server2.js</a></p>');
   
   res.end();
-});
-
-router.get('/', (req, res) => {
-  console.log(`router.get(/) command received`)
 });
 
 module.exports = app;
@@ -34,6 +28,10 @@ module.exports = app;
 module.exports.handler = serverless(app);
 
 /*
+
+router.get('/', (req, res) => {
+  console.log(`router.get(/) command received`)
+});
 
 delete
 
