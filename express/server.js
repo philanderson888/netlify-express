@@ -31,10 +31,12 @@ router.get('/', (req, res) => {
   res.write('<p>server2 .. at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server2" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/server2</a></p>');
   res.write('<p>server3 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server3" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server3</a></p>');
   res.write('<p>server4 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server4" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server4</a></p>');
-  res.write('<p>json01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json01" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json01</a></p>');
-  res.write('<p>json02 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json02" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json02</a></p>');
   
-  res.write('<p>json-with-params at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989</a></p>');
+  res.write('<p>json01 .. return empty json ..<a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json01" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json01</a></p>');
+  
+  res.write('<p>json02 .. return json <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json02" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json02</a></p>');
+  
+  res.write('<p>json-with-params at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989" target="_self">https://netlify-express-serverless.netlify.app/.netlify/functions/json-with-params?name=phil&dob=210989</a></p>');
   
   res.write('<p>json-post-01 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/json-post-01</a></p>');
   res.write('<p>The instructions to build this came from <a href="https://github.com/philanderson888/netlify-express">https://github.com/philanderson888/netlify-express</a></p>');
