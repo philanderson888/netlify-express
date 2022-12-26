@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const serverless = require('serverless-http');
-const fs = require('fs')''
+const fs = require('fs');
 
 app.use('/', (request, response) => {
     console.log(`app.use on server4.js`);
