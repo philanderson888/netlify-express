@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.write('<p>This web server is running using Netlify Serverless Functions</p>');
-  res.write('<p>server at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
+  res.write('<p>router.get("/") .. server .. <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server</a></p>');
   res.write('<p>server2 .. at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server2" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server2</a></p>');
   res.write('<p>server3 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server3" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server3</a></p>');
   res.write('<p>server4 at <a href="https://netlify-express-serverless.netlify.app/.netlify/functions/server4" target="_blank">https://netlify-express-serverless.netlify.app/.netlify/functions/server4</a></p>');
