@@ -9,47 +9,48 @@ const axios = require('axios');
 app.use(bodyParser.json());
 app.use('/.netlify/functions/send-post-request-to-json-post-01', router); 
 
-const url = `https://jsonplaceholder.typicode.com/users`;
-    
-const headers = {
-  'Content-Type': 'application/json'
-}
-
-const user = {
-  name: 'phil'
-}
-
-console.log('11');
-
-axios.post(url, user)
-.then(response => {
-  console.log(`data successfully POSTed to ${url} and received this response`)
-  data = response.json()
-  console.log(data)
-  console.log(json(data))
-});
-
 
 router.get('/', (req, res) => {
     console.log(`router.get('/') on json-send-post-request-to-json-post-01 .. `)
+    console.log(`*** this is not working either with fetch or axios .... not sure why! ****`)
+
+
+
+    /*
 
     const url = `https://jsonplaceholder.typicode.com/users`;
-    
-    const headers = {
-      'Content-Type': 'application/json'
-    }
   
     const user = {
       name: 'phil'
     }
 
-    console.log('1');
+    ==========  axios ============
 
     axios.post(url, user)
     .then(response => {
       console.log(`data successfully POSTed to ${url} and received this response`)
       console.log(response.data)
     });
+
+    ==========  fetch ============
+
+    const http = require('http');
+    const fetch = require('node-fetch');
+    const encoding = require('encoding')
+
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+
+    fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(user)
+    })
+    .then(response => response.json())
+    .then(responseJson => console.log(responseJson));
+
+    */
   
     res.writeHead(200, { 'Content-Type': 'text/html' });
   
@@ -65,23 +66,3 @@ router.get('/', (req, res) => {
 });
 module.exports = app;
 module.exports.handler = serverless(app);
-
-
-
-
-// const url = `https://github.com/philanderson888/netlify-express/blob/master/express/json-post-01.js`;
-
-//const http = require('http');
-//const fetch = require('node-fetch');
-//const encoding = require('encoding')
-
-/*
-fetch(url, {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(postData)
-})
-.then(response => response.json())
-.then(responseJson => console.log(responseJson));
-
-*/
